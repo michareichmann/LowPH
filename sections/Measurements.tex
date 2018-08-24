@@ -1,0 +1,21 @@
+\section{Measurements}
+
+\subsection{Setup \& Readout}
+\fig{.7}{setup}[ETH Telescope setup with one motherboard and three planes][fig:1]
+A demo setup of a ETH Telescope module is shown in \ar{fig:1}. The detectors are glued and wirebonded to a standard carrier-board and then connected to a custom Adaptor-plane via the SAMTEC connector. These Adaptor planes are then plugged into a motherboard which directly connects to the \ac{DTB}.\par
+The test boards are operated with the pixel-dtb-firmware dtb\_v4.2 using the pXar-core libraries.
+
+\subsection{Preparation}
+Both \acp{ROC} of the diamond detector was trimmed to a threshold of \SI{30}{vcal} and the one of the silicon to \SI{32}{vcal} using the standard trimming algorithm of the pXar GUI in the beam area at ambient temperature without cooling. The pulse-height \acp{DAC} \code{phoffset} and \code{phscal} were then adjusted to achieve linear response of the adc vs vcal in the desired range. The according dacParameter.dat files are shown in \ar{sec:app} (Appendix).
+
+\subsection{Hit Maps}
+\subfigs{\subfig{.8}[r]{HM-B6}[Hit map of the diamond detector. Dark blue area corresponds to area where the detector has no readout columns and is only connected to the bump bond. The white area is masked by the chip.]}{\subfig{.8}[r]{HM-S}[Hit map of the silicon detector. The profile corresponds to the shape of the trigger area.\vspace{36pt}]}
+
+\subsection{VCAL Distributions}
+Using the phCalibration.dat files yields the following vcal distributions.
+\subfigs{\subfig{.8}[r]{VD-B6}[Diamond]}{\subfig{.8}[r]{VD-S}[Silicon]}
+Even though more dominant in the diamond device both chips show parts of the distribution that are below a the tuned threshold. It even appears as if there is an additional Gaussian contribution around exactly zero vcal. The \acp{MPV} are exactly in the expected positions considering the deposited energies in the detectors.
+
+\subsection{Low Pulse Height Hit Maps}
+The position of the hits with a pulse height below the tuned threshold seems more dominant certain pixels but is distributed over the full chip.
+\subfigs{\subfig{.8}[r]{CMC-B6}[Diamond]}{\subfig{.8}[r]{CMC-S}[Silicon]}

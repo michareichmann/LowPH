@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
+
+\input{exrapackages}
+\input{settings}
+\input{newcommands}
+\input{TitlePage}
+
+\documenttype{Documentation}
+\title{Low Pulse Heights in CMS Pixel Chips}
+\author{Michael Reichmann}
+\date{\today}
+
+
+\makeindex
+\begin{document}
+
+% ========== TITLE PAGE WITH ABSTRACT ============
+	\maketitle
+
+	\thispagestyle{empty}
+	\cleardoublepage\tableofcontents
+	\setcounter{page}{0}
+	
+	
+% ========== MAIN PART OF THE DOCUMENT ===========
+	\cleardoublepage
+	\input{TestSite}
+	\input{Detectors}
+	\input{Measurements}
+	
+% ========== APPENDIX STUFF ======================
+	\input{Appendix}
+% 	\newpage
+% 	\pagenumbering{Roman}
+% 	\listoffigures
+% 	\listoftables
+	\input{acros}
+	
+% ========== BIBLIOGRAPHY ========================
+% \newpage
+% \bibliographystyle{plain}
+% \bibliography{refs}
+
+\end{document}
